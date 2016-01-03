@@ -15,8 +15,11 @@
   const { createStore } = Redux;
   const store = createStore(counter);
 
+  store.subscribe(() => {
+    console.log(store.getState());
+  });
+
   console.log(store.getState());
   store.dispatch({ type: 'INCREMENT' });
-  console.log(store.getState());
 })();
 
