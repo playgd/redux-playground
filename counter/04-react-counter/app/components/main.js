@@ -23,10 +23,14 @@ const render = () => {
     <Counter 
       value={store.getState()}
       onIncrement={() =>
-        store.dispatch({ type: 'INCREMENT' })
+        store.dispatch({ 
+          type: 'INCREMENT' 
+        })
       }
       onDecrement={() =>
-        store.dispatch({ type: 'DECREMENT' })
+        store.dispatch({ 
+          type: 'DECREMENT' 
+        })
       }
     />,
     document.getElementById('app')  
