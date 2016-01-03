@@ -4,9 +4,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from '../store';
 
-const Counter = (props) => {
+const Counter = ({
+  value
+}) => {
   return (
-    <h1>{props.value}</h1>    
+    <h1>{value}</h1>    
   );
 };
 
