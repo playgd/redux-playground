@@ -4,8 +4,7 @@ import expect from 'expect';
 import deepFreeze from 'deep-freeze';
 
 const addCounter = (list) => {
-  list.push(0);
-  return list;
+  return list.concat([0]);
 };
 
 const testAddCounter = () => {
