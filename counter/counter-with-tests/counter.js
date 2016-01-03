@@ -23,4 +23,9 @@ console.assert(
   'Should counter receives 2 and returns 1'
 );
 
+console.assert(
+  counter(1, { type: 'SOMETHING_ELSE' }),
+  'Should counter receives 1 and return 1'  
+);
+
 console.log('All tests passed!');
