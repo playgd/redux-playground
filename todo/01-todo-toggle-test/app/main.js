@@ -4,8 +4,11 @@ import expect from 'expect';
 import deepFreeze from 'deep-freeze';
 
 const toggleTodo = (todo) => {
-  todo.completed = !todo.completed;
-  return todo;
+  return {
+    id: todo.id,
+    text: todo.text,
+    completed: !todo.completed
+  };
 };
 
 const testToggleTodo = () => {
