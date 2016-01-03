@@ -15,6 +15,16 @@
   const createStore = (reducer) => {
     let state;
     const getState = () => state;
+    
+    const dispatch = (action) => {
+    
+    };
+
+    const subscribe = (listener) => {
+    
+    };
+
+    return { getState, dispatch, subscribe };
   };
 
   const store = createStore(counter);
