@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import store from '../reducers/counter';
+import store from '../store';
 
 const Counter = (props) => {
   return (
