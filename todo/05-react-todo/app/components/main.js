@@ -4,11 +4,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from '../store';
 
-const TodoApp = (todos) => {
+let nextTodoId = 0;
+
+const TodoApp = ({ todos }) => {
   return (
     <div>
-      Hello!
-    </div>    
+      <button onClick={() => {
+        store.dispatch({
+          type: 'ADD_TODO',
+          text: 'Test',
+          id: nextTodoId++
+        });
+      }}>
+        Add todo
+      </button>
+      <ul>
+        {todos.map(todo => {
+          return (
+            <li key={todo.id}>
+              {todo.text}
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 
