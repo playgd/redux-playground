@@ -1,15 +1,14 @@
 'use strict';
 
 const counter = (state = 0, action) => {
-  if(action.type === 'INCREMENT') {
-    return state + 1;
+  switch(action.type) {
+    case 'INCREMENT':
+      return state + 1;
+    case 'DECREMENT':
+      return state - 1;
+    default:
+      return state;
   } 
-  else if(action.type === 'DECREMENT') {
-    return state - 1;
-  }
-  else {
-    return state;
-  }
 };
 
 console.assert(
