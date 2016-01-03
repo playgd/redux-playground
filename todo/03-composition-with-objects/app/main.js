@@ -45,11 +45,24 @@ const visibilityFilter = (
     case 'SET_VISIBILITY_FILTER':
       return action.filter;
     default:
-      state;
+      return state;
   }
 };
 
-const store = createStore(todos);
+const todoApp = (state = {}, action) => {
+  return {
+    todos: todos(
+      state.todos,
+      action
+    ),
+    visibilityFilter: visibilityFilter(
+      state.visibilityFilter,
+      action
+    )
+  };
+};
+
+const store = createStore(todoApp);
 
 console.log('Initial state:');
 console.log(store.getState());
