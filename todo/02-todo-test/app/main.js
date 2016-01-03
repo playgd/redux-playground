@@ -11,7 +11,14 @@ const todo = (state, action) => {
           text: action.text,
           completed: false
       };
-
+  case 'TOGGLE_TODO':
+      if(state.id !== action.id) {
+        return state;
+      }
+      return {
+        ...state,
+        completed: !state.completed
+      };
   }
 };
 
@@ -23,15 +30,7 @@ const todos = (state = [], action) => {
         todo(undefined, action)
       ];
     case 'TOGGLE_TODO':
-      return state.map(todo => {
-        if(todo.id !== action.id) {
-          return todo;
-        }
-        return {
-          ...todo,
-          completed: !todo.completed
-        };
-      });
+      return state.map(t => todo(t, action));
     default:
       return state;
   }
