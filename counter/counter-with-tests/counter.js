@@ -1,6 +1,8 @@
 'use strict';
 
 function counter(state, action) {
+  state = state || 0;
+  
   if(action.type === 'INCREMENT') {
     return state + 1;
   } 
