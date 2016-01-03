@@ -12,6 +12,8 @@ const testAddCounter = () => {
   const listBefore = [];
   const listAfter = [0];
 
+  deepFreeze(listBefore);
+
   expect(
     addCounter(listBefore)
   ).toEqual(listAfter);
