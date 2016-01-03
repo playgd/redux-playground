@@ -15,8 +15,10 @@ const removeCounter = (list, index) => {
 };
 
 const incrementCounter = (list, index) => {
-  list[index]++;
-  return list;
+  return list
+    .slice(0, index)
+    .concat(list[index] + 1)
+    .concat(list.slice(index + 1));
 };
 
 const testAddCounter = () => {
