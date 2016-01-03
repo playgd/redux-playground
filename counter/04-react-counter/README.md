@@ -1,6 +1,6 @@
 # Counter React
 
-## Generation assets
+## Generating assets
 
 ```
 npm install
