@@ -11,7 +11,7 @@ const todo = (state, action) => {
           text: action.text,
           completed: false
       };
-  case 'TOGGLE_TODO':
+    case 'TOGGLE_TODO':
       if(state.id !== action.id) {
         return state;
       }
@@ -19,7 +19,7 @@ const todo = (state, action) => {
         ...state,
         completed: !state.completed
       };
-  default:
+    default:
       return state;
   }
 };
