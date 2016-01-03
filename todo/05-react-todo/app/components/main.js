@@ -7,14 +7,19 @@ import store from '../store';
 let nextTodoId = 0;
 
 const TodoApp = ({ todos }) => {
+  let input;
   return (
     <div>
+      <input ref={node => {
+        input = node;
+      }} />
       <button onClick={() => {
         store.dispatch({
           type: 'ADD_TODO',
-          text: 'Test',
+          text: input.value,
           id: nextTodoId++
         });
+        input.value = '';
       }}>
         Add todo
       </button>
