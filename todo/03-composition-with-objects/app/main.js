@@ -50,8 +50,8 @@ const visibilityFilter = (
 };
 
 const todoApp = combineReducers({
-  todos: todos,
-  visibilityFilter: visibilityFilter
+  todos,
+  visibilityFilter
 });
 
 const store = createStore(todoApp);
