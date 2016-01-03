@@ -4,7 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import store from '../reducers/counter';
 
-const Main = (props) => {
+const Counter = (props) => {
   return (
     <h1>{props.value}</h1>    
   );
@@ -12,7 +12,7 @@ const Main = (props) => {
 
 const render = () => {
   ReactDOM.render(
-    <Main value={store.getState()} />,
+    <Counter value={store.getState()} />,
     document.getElementById('app')  
   );
 };
