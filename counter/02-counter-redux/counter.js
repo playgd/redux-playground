@@ -16,16 +16,14 @@
   const store = createStore(counter);
 
   const render = () => {
-    console.log(store.getState());
+    document.body.innerText = store.getState();
   };
   
   store.subscribe(render);
   render();
 
-  store.dispatch({ type: 'INCREMENT' });
-  store.dispatch({ type: 'INCREMENT' });
-  store.dispatch({ type: 'INCREMENT' });
-  store.dispatch({ type: 'DECREMENT' });
-  store.dispatch({ type: 'DECREMENT' });
+  document.addEventListener('click', () => {
+    store.dispatch({ type: 'INCREMENT' });
+  }, false);
 })();
 
