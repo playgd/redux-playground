@@ -5,7 +5,7 @@ function counter(state, action) {
     return state + 1;
   } 
   else if(action.type === 'DECREMENT') {
-    return state -1;
+    return state - 1;
   }
   else {
     return state;
@@ -30,6 +30,11 @@ console.assert(
 console.assert(
   counter(1, { type: 'SOMETHING_ELSE' }),
   'Should counter receives 1 and return 1'  
+);
+
+console.assert(
+  counter(undefined, {}) === 0,
+  'First load, counter receives undefined state and no actions; and should returns 0'
 );
 
 console.log('All tests passed!');
