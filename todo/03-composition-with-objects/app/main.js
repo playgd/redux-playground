@@ -100,3 +100,13 @@ console.log('Current state:');
 console.log(store.getState());
 console.log('-'.repeat(20));
 
+console.log('Dispatching SET_VISIBILITY_FILTER');
+store.dispatch({
+  type: 'SET_VISIBILITY_FILTER',
+  filter: 'SHOW_COMPLETED'
+});
+
+console.log('Current state:');
+console.log(store.getState());
+console.log('-'.repeat(20));
+
