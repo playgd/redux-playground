@@ -1,7 +1,5 @@
 'use strict';
 
-import { createStore } from 'redux';
-
 const counter = (state = 0, action) => {
   switch(action.type) {
     case 'INCREMENT':
@@ -13,6 +11,4 @@ const counter = (state = 0, action) => {
   } 
 };
 
-const store = createStore(counter);
-
-export default store;
+export default counter;
