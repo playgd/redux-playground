@@ -3,6 +3,7 @@
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
     "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-2": "^6.3.13",
     "deep-freeze": "0.0.1",
     "expect": "^1.13.4",
     "webpack": "^1.12.9"

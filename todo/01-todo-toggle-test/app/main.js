@@ -4,9 +4,10 @@ import expect from 'expect';
 import deepFreeze from 'deep-freeze';
 
 const toggleTodo = (todo) => {
-  return Object.assign({}, todo, {
+  return {
+    ...todo,
     completed: !todo.completed
-  });
+  };
 };
 
 const testToggleTodo = () => {
