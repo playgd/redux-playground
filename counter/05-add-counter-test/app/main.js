@@ -8,7 +8,8 @@ const addCounter = (list) => {
 };
 
 const removeCounter = (list, index) => {
-
+  list.splice(index, 1);
+  return list;
 };
 
 const testAddCounter = () => {
