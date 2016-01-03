@@ -14,6 +14,10 @@ const removeCounter = (list, index) => {
   ];
 };
 
+const incrementCounter = (list, index) => {
+
+};
+
 const testAddCounter = () => {
   const listBefore = [];
   const listAfter = [0];
@@ -36,6 +40,16 @@ const testRemoveCounter = () => {
   ).toEqual(listAfter);
 };
 
+const testIncrementCounter = () => {
+  const listBefore = [0, 10, 20];
+  const listAfter = [0, 11, 20];
+
+  expect(
+    incrementCounter(listBefore, 1)
+  ).toEqual(listAfter);
+};
+
 testAddCounter();
 testRemoveCounter();
+testIncrementCounter();
 console.log('All tests passed!');
