@@ -2,14 +2,21 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import store from '../reducers/counter';
 
-const Main = () => {
+const Main = (props) => {
   return (
-    <h1>Hello World</h1>    
+    <h1>{props.value}</h1>    
   );
 };
 
-ReactDOM.render(
-  <Main />,
-  document.getElementById('app')  
-);
+const render = () => {
+  ReactDOM.render(
+    <Main value={store.getState()} />,
+    document.getElementById('app')  
+  );
+};
+
+store.subscribe(render);
+render();
+
