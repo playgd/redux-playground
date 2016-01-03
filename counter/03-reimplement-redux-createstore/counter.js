@@ -29,6 +29,8 @@
       };
     };
 
+    dispatch({});
+
     return { getState, dispatch, subscribe };
   };
 
