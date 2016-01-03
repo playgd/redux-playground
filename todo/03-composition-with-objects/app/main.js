@@ -1,5 +1,7 @@
 'use strict';
 
+import { createStore } from 'redux';
+
 const todo = (state, action) => {
   switch(action.type) {
     case 'ADD_TODO':
@@ -35,4 +37,41 @@ const todos = (state = [], action) => {
   }
 };
 
+const store = createStore(todos);
+
+console.log('Initial state:');
+console.log(store.getState());
+console.log('-'.repeat(20));
+
+console.log('Dispatching ADD_TODO');
+store.dispatch({
+  type: 'ADD_TODO',
+  id: 0,
+  text: 'Learn Redux'
+});
+
+console.log('Current state:');
+console.log(store.getState());
+console.log('-'.repeat(20));
+
+console.log('Dispatching ADD_TODO');
+store.dispatch({
+  type: 'ADD_TODO',
+  id: 1,
+  text: 'Go shopping'
+});
+
+console.log('Current state:');
+console.log(store.getState());
+console.log('-'.repeat(20));
+
+console.log('Dispatching TOGGLE_TODO');
+store.dispatch({
+  type: 'TOGGLE_TODO',
+  id: 1
+});
+
+console.log('Current state:');
+console.log(store.getState());
+console.log('-'.repeat(20));
 
