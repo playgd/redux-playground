@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import TodoList from './todo-list';
-import store from '../store';
 
 const getVisibleTodos = (
   todos,
@@ -21,6 +20,7 @@ const getVisibleTodos = (
 
 class VisibleTodoList extends Component {
   componentDidMount() {
+    const { store } = this.props;
     this.unsubscribe = store.subscribe(() =>
       this.forceUpdate()
     );
@@ -32,7 +32,9 @@ class VisibleTodoList extends Component {
 
   render() {
     const props = this.props;
+    const { store } = props;
     const state = store.getState();
+
     return (
       <TodoList
         todos={

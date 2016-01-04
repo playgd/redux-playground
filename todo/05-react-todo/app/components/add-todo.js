@@ -1,10 +1,9 @@
 'use strict';
 
 import React from 'react';
-import store from '../store';
 
 let nextTodoId = 0;
-const AddTodo = () => {
+const AddTodo = ({ store }) => {
     let input;
     return (
       <div>
