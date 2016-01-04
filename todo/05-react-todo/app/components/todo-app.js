@@ -20,8 +20,6 @@ const getVisibleTodos = (
   }
 };
 
-// filterlink
-
 let nextTodoId = 0;
 const TodoApp = ({
   todos,
