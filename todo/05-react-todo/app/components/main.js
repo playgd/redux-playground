@@ -20,8 +20,13 @@ const getVisibleTodos = (
 
 const FilterLink = ({
   filter,
+  currentFilter,
   children
 }) => {
+  if(currentFilter === filter) {
+    return <span>{children}</span>;
+  }
+
   return (
     <a href="#" onClick={(e) => {
       e.preventDefault();
@@ -78,15 +83,21 @@ const TodoApp = ({
       <p>
         Show:
         {' '}
-        <FilterLink filter='SHOW_ALL'>
+        <FilterLink 
+          filter='SHOW_ALL'
+          currentFilter={visibilityFilter}>
           All
         </FilterLink>
         {' '}
-        <FilterLink filter='SHOW_COMPLETED'>
+        <FilterLink 
+          filter='SHOW_COMPLETED'
+          currentFilter={visibilityFilter}>
           Completed
         </FilterLink>
         {' '}
-        <FilterLink filter='SHOW_ACTIVE'>
+        <FilterLink 
+          filter='SHOW_ACTIVE'
+          currentFilter={visibilityFilter}>
           Active
         </FilterLink>
       </p>
