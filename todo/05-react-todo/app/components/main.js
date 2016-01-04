@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import store from '../store';
+import TodoList from './todo-list';
 
 const getVisibleTodos = (
   todos,
@@ -40,37 +41,6 @@ const FilterLink = ({
   );
 };
 
-const Todo = ({
-  onClick,
-  completed,
-  text
-}) => (
-  <li
-    onClick={onClick}
-    style={{
-      textDecoration: completed
-        ? 'line-through'
-        : 'none'
-  }}>
-    {text}
-  </li>
-);
-
-const TodoList = ({
-  todos,
-  onTodoClick
-}) => (
-  <ul>
-    {todos.map(todo => {
-      return (
-        <Todo
-          key={todo.id}
-          {...todo}
-          onClick={() => onTodoClick(todo.id)} />
-      );
-    })}
-  </ul>
-);
 
 let nextTodoId = 0;
 const TodoApp = ({
