@@ -1,16 +1,17 @@
 'use strict';
 
 import React from 'react';
+import { connect } from 'react-redux';
 
 let nextTodoId = 0;
-const AddTodo = (props, { store }) => {
+let AddTodo = ({ dispatch }) => {
     let input;
     return (
       <div>
         <input ref={node => (input = node)} />
 
         <button onClick={() => {
-          store.dispatch({
+          dispatch({
             type: 'ADD_TODO',
             id: nextTodoId++,
             text: input.value
@@ -24,8 +25,13 @@ const AddTodo = (props, { store }) => {
     );
 };
 
-AddTodo.contextTypes = {
-  store: React.PropTypes.object
-};
+AddTodo = connect(
+  state => {
+    return {};
+  },
+  dispatch => {
+    return { dispatch };
+  }
+)(AddTodo);
 
 export default AddTodo;
