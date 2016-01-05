@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import TodoList from './todo-list';
-import { toggleTodo } from '../actions/todo-actions';
+import { toggleTodo } from '../actions';
 
 const getVisibleTodos = (
   todos,
