@@ -8,7 +8,7 @@ let AddTodo = ({ dispatch }) => {
     let input;
     return (
       <form>
-        <input ref={node => (input = node)} />
+        <input autoFocus ref={node => (input = node)} />
 
         <button
           onClick={(e) => {
