@@ -25,9 +25,6 @@ let AddTodo = ({ dispatch }) => {
     );
 };
 
-AddTodo = connect(
-  null,
-  null
-)(AddTodo);
+AddTodo = connect()(AddTodo);
 
 export default AddTodo;
