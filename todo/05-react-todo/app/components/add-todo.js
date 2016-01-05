@@ -7,16 +7,19 @@ import { addTodo } from '../actions';
 let AddTodo = ({ dispatch }) => {
     let input;
     return (
-      <div>
-        <input ref={node => (input = node)} />
+      <form>
+        <input autoFocus ref={node => (input = node)} />
 
-        <button onClick={() => {
-          dispatch(addTodo(input.value));
-          input.value = '';
-        }}>
+        <button
+          onClick={(e) => {
+            e.preventDefault();
+            dispatch(addTodo(input.value));
+            input.focus();
+            input.value = '';
+          }}>
           Add todo
         </button>
-      </div>
+      </form>
     );
 };
 
