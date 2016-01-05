@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Link from './link';
-import setVisibilityFilter from '../actions/set-visibility-filter';
+import { setVisibilityFilter } from '../actions/todo-actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
