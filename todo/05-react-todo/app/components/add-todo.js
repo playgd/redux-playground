@@ -26,9 +26,7 @@ let AddTodo = ({ dispatch }) => {
 };
 
 AddTodo = connect(
-  state => {
-    return {};
-  },
+  null,
   dispatch => {
     return { dispatch };
   }
