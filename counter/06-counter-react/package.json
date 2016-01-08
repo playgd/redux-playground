@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start": "python -m SimpleHTTPServer 9001",
+    "watch": "webpack --watch",
+    "w": "npm run watch"
+  },
   "dependencies": {
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
