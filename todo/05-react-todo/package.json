@@ -1,4 +1,9 @@
 {
+  "scripts": {
+    "start": "pyserver",
+    "build": "webpack",
+    "watch": "webpack --watch"
+  },
   "devDependencies": {
     "babel-core": "^6.3.26",
     "babel-loader": "^6.2.0",
