@@ -6,7 +6,7 @@ const counter = (state = 0, action) => {
     DECREMENT: state - 1
   };
 
-  return (actions[action.type] !== undefined)
+  return (typeof actions[action.type] !== 'undefined')
     ? actions[action.type]
     : state;
 };
