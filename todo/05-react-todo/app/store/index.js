@@ -1,17 +1,21 @@
 'use strict';
 
-import { createStore, combineReducers } from 'redux';
-import todos from '../reducers/todos';
-import visibilityFilter from '../reducers/visibility-filter';
-import { loadState } from '../local-storage'
+import { createStore } from 'redux';
+import throttle from 'lodash.throttle'
+import { loadState, saveState } from '../local-storage'
+import rootReducer from '../reducers'
 
-const persistedState = loadState()
+const configureStore = () => {
+  const persistedState = loadState()
+  const store = createStore(rootReducer, persistedState);
 
-const rootReducer = combineReducers({
-  todos,
-  visibilityFilter
-});
+  store.subscribe(throttle(() => {
+    saveState({
+      todos: store.getState().todos
+    })
+  }, 1000))
 
-const store = createStore(rootReducer, persistedState);
+  return store
+}
 
-export default store;
+export default configureStore;

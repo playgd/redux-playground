@@ -1,22 +1,13 @@
 'use strict';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import TodoApp from './components/todo-app';
-import store from './store';
-import { saveState } from './local-storage'
-import throttle from 'lodash.throttle'
+import { render } from 'react-dom';
+import Root from './components/root'
+import configureStore from './store';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <TodoApp />
-  </Provider>,
+const store = configureStore()
+
+render(
+  <Root store={store} />,
   document.querySelector('[data-js="app"]')
 );
-
-store.subscribe(throttle(() => {
-  saveState({
-    todos: store.getState().todos
-  })
-}))
