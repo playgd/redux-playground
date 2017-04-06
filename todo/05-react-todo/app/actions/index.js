@@ -1,13 +1,12 @@
 'use strict';
 
-export const addTodo = (() => {
-  let nextTodoId = 0;
-  return (text) => ({
-    type: 'ADD_TODO',
-    id: nextTodoId++,
-    text
-  });
-})();
+import { v4 } from 'node-uuid'
+
+export const addTodo = (text) => ({
+  type: 'ADD_TODO',
+  id: v4(),
+  text
+});
 
 export const setVisibilityFilter = (filter) => ({
   type: 'SET_VISIBILITY_FILTER',
