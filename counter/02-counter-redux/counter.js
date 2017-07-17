@@ -1,4 +1,4 @@
-(() => {
+((doc) => {
   'use strict';
 
   const counter = (state = 0, action) => {
@@ -9,21 +9,21 @@
         return state - 1;
       default:
         return state;
-    } 
+    }
   };
 
   const { createStore } = Redux;
   const store = createStore(counter);
 
   const render = () => {
-    document.body.innerText = store.getState();
+    doc.querySelector('#root').innerText = store.getState();
   };
-  
+
   store.subscribe(render);
   render();
 
-  document.addEventListener('click', () => {
+  doc.addEventListener('click', () => {
     store.dispatch({ type: 'INCREMENT' });
   }, false);
-})();
+})(document);
 
